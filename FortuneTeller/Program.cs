@@ -22,30 +22,33 @@ namespace FortuneTeller
 
             //use enters first name
             Console.WriteLine("Enter your First name.");
-            firstName = Console.ReadLine().ToLower();
+            firstName = Console.ReadLine().ToUpper();
 
 
             //user enters last name
             Console.WriteLine("Enter your last name.");
-            lastName = Console.ReadLine().ToLower();
+            lastName = Console.ReadLine().ToUpper();
 
+            Console.WriteLine("Greetings " + firstName + " " + lastName + " I will tell you your future. ");
+            Console.WriteLine("");
 
             ////user enters current age
             Console.WriteLine("What is your age?");
             age = int.Parse(Console.ReadLine());
             if (age % 2 == 0)
             {
-                value = (age * 2);
+                value = (age * 3);
             }
             else
             {
-                value = (age * 1.5);
+                value = (age * 2);
             }
-
+            Console.WriteLine("");
 
             ////user enters 2 digit birth month
             Console.WriteLine("What is your Two digit Birth month?");
             birthMonth = int.Parse(Console.ReadLine());
+
 
             if ((birthMonth < 1) || (birthMonth > 12))
             {
@@ -112,9 +115,9 @@ namespace FortuneTeller
                     break;
 
 
-                default://fixed default
-                    Console.WriteLine("That was not a correct response, please choose your favorite ROYGBIV color");
-                    color = Console.ReadLine().ToLower();
+                default:
+                    Console.WriteLine("Not a pleasing response");
+                    transportation = ("a squeaky shopping cart");
                     break;
             }
             switch (color)
@@ -156,11 +159,8 @@ namespace FortuneTeller
                     break;
 
 
-                default:
-                    Console.WriteLine("That was not a correct response, please choose your favorite ROYGBIV color");
-                    Console.ReadLine().ToLower();
-                    break;
             }
+            Console.WriteLine("");
 
             Console.WriteLine("How many siblings do you have?");
             siblings = int.Parse(Console.ReadLine());
@@ -195,10 +195,24 @@ namespace FortuneTeller
                 Console.WriteLine("you chose more than 3");
                 house = ("the garage of your parents");
             }
+            Console.WriteLine("");
 
 
             Console.WriteLine(firstName + (" ") + lastName + " will retire in " + birthMonth + " years" + " with " + value + " in the bank " + "a vacation home of " + house + " and  " + transportation);
 
+
+            if (value == 1000000000000.00)
+            {
+                Console.WriteLine("Wow, what a fortune");
+            }
+            else if (value == 777777.77)
+            {
+                Console.WriteLine("Your fortune could be better");
+            }
+            else
+            {
+                Console.WriteLine("Your fortune needs better days.");
+            }
         }
     }
 }
